@@ -1,0 +1,466 @@
+
+D:\github_repos\GitExercise>git init
+Initialized empty Git repository in D:/github_repos/GitExercise/.git/
+
+D:\github_repos\GitExercise>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        text.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\github_repos\GitExercise>git add .
+
+D:\github_repos\GitExercise>git commit -m "Added text file"
+[master (root-commit) 87902e6] Added text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 text.txt
+
+D:\github_repos\GitExercise>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\github_repos\GitExercise>git add .
+
+D:\github_repos\GitExercise>git commit -m "Added two files"
+[master b00daad] Added two files
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ touch .gitignore
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "Added gitignore"
+[master bbf9f89] Added gitignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git rm file2.txt
+rm 'file2.txt'
+
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "Added text file"
+[master 4c1733e] Added text file
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 file2.txt
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git checkout file1.txt
+Updated 1 path from the index
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "changed text file"
+[master 4e3576d] changed text file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git log
+commit 4e3576d8cf397f38bd11820abb9ee8c2bcfd686d (HEAD -> master)
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:53:30 2021 +0530
+
+    changed text file
+
+commit 4c1733e3d65df6bd4cf30d42998d7934b4a5c895
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:49:27 2021 +0530
+
+    Added text file
+
+commit bbf9f89e2e1f21a4216be38f0e38bc9e7dfe43d7
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:45:07 2021 +0530
+
+    Added gitignore
+
+commit b00daadf179d9458723491d1e82ceb72cdadd014
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:40:32 2021 +0530
+
+    Added two files
+
+commit 87902e6aa336f335687fa2f7f3993cd2d60e1def
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:39:39 2021 +0530
+
+    Added text file
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ ^C
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git reset --hard 4c1733e3d65df6bd4cf30d42998d7934b
+HEAD is now at 4c1733e Added text file
+
+
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git log
+commit a72f519528a95878b798136e8729a9bc8768c42e (HEAD -> master, dev2)
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 23:07:22 2021 +0530
+
+    changed file1 file
+
+commit 6b63ffeff3bf4b2a29c463753fbe248d8160fe75 (dev)
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 23:06:11 2021 +0530
+
+    Changed text file
+
+commit 4c1733e3d65df6bd4cf30d42998d7934b4a5c895
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:49:27 2021 +0530
+
+    Added text file
+
+commit bbf9f89e2e1f21a4216be38f0e38bc9e7dfe43d7
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:45:07 2021 +0530
+
+    Added gitignore
+
+commit b00daadf179d9458723491d1e82ceb72cdadd014
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:40:32 2021 +0530
+
+    Added two files
+
+commit 87902e6aa336f335687fa2f7f3993cd2d60e1def
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:39:39 2021 +0530
+
+    Added text file
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git log ^C
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git log 87902e6aa336f335
+commit 87902e6aa336f335687fa2f7f3993cd2d60e1def
+Author: yatinagg <yatinagg12@gmail.com>
+Date:   Thu Oct 14 22:39:39 2021 +0530
+
+    Added text file
+
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git log 87902e6aa336f335 --oneline
+87902e6 Added text file
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ ^C
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature1)
+$ git add .
+g
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature1)
+$ git commit -m "text changed"
+[feature1 aaf15fc] text changed
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature1)
+$ git switch master
+Switched to branch 'master'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "text changed"
+[master abf7b81] text changed
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git merge feature1
+Auto-merging text.txt
+CONFLICT (content): Merge conflict in text.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master|MERGING)
+$ git checkout -b feature2
+Switched to a new branch 'feature2'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2)
+$ git commit -m "feature2"
+[feature2 467e376] feature2
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2)
+$ git switch master
+Switched to branch 'master'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git switch feature2
+error: Your local changes to the following files would be overwritten by checkout:
+        file1.txt
+        text.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git switch master
+Already on 'master'
+M       file1.txt
+M       text.txt
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "master
+> "
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+        modified:   text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git add .
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git commit -m "master"
+[master cba6b36] master
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git switch feature2
+Switched to branch 'feature2'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2)
+$ git rebase master
+error: could not apply 467e376... feature2
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 467e376... feature2
+Auto-merging text.txt
+CONFLICT (content): Merge conflict in text.txt
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently rebasing branch 'feature2' on 'cba6b36'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   file1.txt
+        both modified:   text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git commit -m "final"
+[detached HEAD 2a03bfb] final
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git switch feature2
+Switched to branch 'feature2'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2)
+$ git rebase master
+error: could not apply 467e376... feature2
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 467e376... feature2
+Auto-merging text.txt
+CONFLICT (content): Merge conflict in text.txt
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently rebasing branch 'feature2' on 'cba6b36'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   file1.txt
+        both modified:   text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git commit -m "final"
+[detached HEAD 2a03bfb] final
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ ^C
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently editing a commit while rebasing branch 'feature2' on 'cba6b36'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   text.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git stash
+Saved working directory and index state WIP on (no branch): 2a03bfb final
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently editing a commit while rebasing branch 'feature2' on 'cba6b36'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git stash
+No local changes to save
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git commit -m "Chnaged text file"
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently editing a commit while rebasing branch 'feature2' on 'cba6b36'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git add .
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git commit -m "Chnaged text file"
+interactive rebase in progress; onto cba6b36
+Last command done (1 command done):
+   pick 467e376 feature2
+No commands remaining.
+You are currently editing a commit while rebasing branch 'feature2' on 'cba6b36'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git switch master
+fatal: cannot switch branch while rebasing
+Consider "git rebase --quit" or "git worktree add".
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (feature2|REBASE 1/1)
+$ git rebase --quit
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise ((2a03bfb...))
+$ git switch master
+Previous HEAD position was 2a03bfb final
+Switched to branch 'master'
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git stash
+Saved working directory and index state WIP on master: cba6b36 master
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$ git remote add origin https://github.com/yatinagg/GitExercise.git
+ASUS@LAPTOP-SF7RRTHP MINGW64 /d/github_repos/GitExercise (master)
+$     git push --set-upstream origin master
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (25/25), 1.95 KiB | 499.00 KiB/s, done.
+Total 25 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/yatinagg/GitExercise.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
